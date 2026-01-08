@@ -51,8 +51,19 @@ class CartProvider with ChangeNotifier {
   }
 
   /// Updates the quantity of an item at the specified index.
+  /// 
   /// Note: This method does not validate against product stock.
-  /// Callers should ensure the quantity does not exceed available stock.
+  /// Callers are responsible for ensuring the quantity does not exceed
+  /// available stock to prevent overselling.
+  /// 
+  /// Example usage:
+  /// ```dart
+  /// final product = cartProvider.items[index].product;
+  /// final newQuantity = 5;
+  /// if (newQuantity <= product.stockQuantity) {
+  ///   cartProvider.updateQuantity(index, newQuantity);
+  /// }
+  /// ```
   void updateQuantity(int index, int quantity) {
     if (index >= 0 && index < _items.length && quantity > 0) {
       _items[index].quantity = quantity;
