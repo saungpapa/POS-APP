@@ -13,8 +13,14 @@ class ScannerScreen extends StatefulWidget {
 }
 
 class _ScannerScreenState extends State<ScannerScreen> {
-  MobileScannerController cameraController = MobileScannerController();
+  late MobileScannerController cameraController;
   bool _isProcessing = false;
+
+  @override
+  void initState() {
+    super.initState();
+    cameraController = MobileScannerController();
+  }
 
   @override
   void dispose() {

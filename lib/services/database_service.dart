@@ -138,16 +138,21 @@ class DatabaseService {
       // Insert sale
       final saleId = await txn.insert('sales', sale.toMap());
       
-      // Insert sale items
+      // Insert sale items and update stock
       for (var item in items) {
         await txn.insert(
           'sale_items',
           item.copyWith(saleId: saleId).toMap(),
         );
         
-        // Update product stock
-        final product = await getProduct(item.productId);
-        if (product != null) {
+        // Update product stock using transaction
+        final productMaps = await txn.query(
+          'products',
+          where: 'id = ?',
+          whereArgs: [item.productId],
+        );
+        if (productMaps.isNotEmpty) {
+          final product = Product.fromMap(productMaps.first);
           await txn.update(
             'products',
             {'stock_quantity': product.stockQuantity - item.quantity},
