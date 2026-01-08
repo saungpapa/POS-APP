@@ -1,0 +1,45 @@
+name: pos_app
+description: ဈေးဆိုင်အတွက် Mobile POS App - Barcode Scanner နဲ့ ဈေးပေါင်းစနစ်
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # UI Components
+  cupertino_icons: ^1.0.2
+  
+  # Database
+  sqflite: ^2.3.0
+  path: ^1.8.3
+  path_provider: ^2.1.1
+  
+  # Barcode Scanner
+  mobile_scanner: ^3.5.2
+  
+  # Receipt Print
+  esc_pos_bluetooth: ^0.4.1
+  esc_pos_utils: ^1.1.0
+  permission_handler: ^11.0.1
+  
+  # Sales Report
+  fl_chart: ^0.65.0
+  pdf: ^3.10.4
+  printing: ^5.11.0
+  share_plus: ^7.2.1
+  
+  # State Management & Utils
+  provider: ^6.1.1
+  intl: ^0.18.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
