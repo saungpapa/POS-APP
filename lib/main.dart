@@ -5,6 +5,8 @@ import 'screens/home_screen.dart';
 import 'screens/scanner_screen.dart';
 import 'screens/cart_screen.dart';
 import 'screens/products_screen.dart';
+import 'screens/sales_report_screen.dart';
+import 'screens/settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,6 +51,8 @@ class _MainNavigatorState extends State<MainNavigator> {
     const ScannerScreen(),
     const CartScreen(),
     const ProductsScreen(),
+    const SalesReportScreen(),
+    const SettingsScreen(),
   ];
 
   @override
@@ -81,6 +85,14 @@ class _MainNavigatorState extends State<MainNavigator> {
           BottomNavigationBarItem(
             icon: Icon(Icons.inventory),
             label: 'ပစ္စည်းများ',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bar_chart),
+            label: 'အစီရင်ခံစာ',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'ဆက်တင်',
           ),
         ],
       ),

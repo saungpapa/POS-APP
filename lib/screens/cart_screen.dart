@@ -6,6 +6,8 @@ import '../widgets/cart_item_tile.dart';
 import '../services/database_service.dart';
 import '../models/sale.dart';
 import '../models/sale_item.dart';
+import 'receipt_preview_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -62,10 +64,31 @@ class CartScreen extends StatelessWidget {
         );
       }).toList();
 
-      await DatabaseService.instance.createSale(sale, saleItems);
+      final completedSale = await DatabaseService.instance.createSale(sale, saleItems);
+
+      // Get shop name from preferences
+      final prefs = await SharedPreferences.getInstance();
+      final shopName = prefs.getString('shop_name') ?? 'ကျွန်ုပ်တို့၏ ဆိုင်';
+
+      // Save cart items for receipt
+      final cartItems = List.from(cartProvider.items);
 
       // Clear cart
       cartProvider.clear();
+
+      if (!context.mounted) return;
+
+      // Navigate to receipt preview
+      await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ReceiptPreviewScreen(
+            sale: completedSale,
+            cartItems: cartItems,
+            shopName: shopName,
+          ),
+        ),
+      );
 
       if (!context.mounted) return;
 
