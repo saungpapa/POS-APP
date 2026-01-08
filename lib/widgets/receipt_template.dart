@@ -78,7 +78,7 @@ class ReceiptTemplate extends StatelessWidget {
                 flex: 2,
                 child: Text(
                   'ဈေး',
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold),
                   textAlign: TextAlign.right,
                 ),
               ),

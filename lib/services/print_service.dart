@@ -9,7 +9,7 @@ class PrintService {
   static final PrintService instance = PrintService._init();
   PrintService._init();
 
-  PrinterBluetoothManager _printerManager = PrinterBluetoothManager();
+  late final PrinterBluetoothManager _printerManager = PrinterBluetoothManager();
   PrinterBluetooth? _selectedPrinter;
 
   PrinterBluetooth? get selectedPrinter => _selectedPrinter;

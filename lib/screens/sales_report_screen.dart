@@ -330,9 +330,11 @@ class _SalesReportScreenState extends State<SalesReportScreen> {
                                       ],
                                       selected: {_showRevenueChart},
                                       onSelectionChanged: (Set<bool> newSelection) {
-                                        setState(() {
-                                          _showRevenueChart = newSelection.first;
-                                        });
+                                        if (newSelection.isNotEmpty) {
+                                          setState(() {
+                                            _showRevenueChart = newSelection.first;
+                                          });
+                                        }
                                       },
                                     ),
                                   ],

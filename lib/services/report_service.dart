@@ -89,7 +89,7 @@ class ReportService {
         productId: row['id'] as int,
         productName: row['name'] as String,
         quantitySold: row['total_quantity'] as int,
-        totalRevenue: row['total_revenue'] as double,
+        totalRevenue: (row['total_revenue'] as num).toDouble(),
       );
     }).toList();
   }
