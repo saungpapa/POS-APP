@@ -12,6 +12,7 @@
 - 📦 **Product Management** - ပစ္စည်းများ ထည့်/ပြင်/ဖျက် လုပ်ဆောင်နိုင်
 - 📊 **Sales Tracking** - ရောင်းချမှု မှတ်တမ်းများ သိမ်းဆည်းနိုင်
 - 🇲🇲 **Myanmar UI** - Myanmar language interface
+- 🎨 **Custom App Icon** - Professional shopping cart and barcode themed icon
 
 ## 📱 Technology Stack
 - **Framework**: Flutter (Dart)
@@ -89,6 +90,18 @@ Run specific test file:
 ```bash
 flutter test test/database_service_test.dart
 flutter test test/cart_provider_test.dart
+```
+
+## 🎨 App Icons
+
+The app features a custom-designed icon with a shopping cart and barcode theme in Material Design blue. Icons are automatically generated for all Android and iOS device sizes, including Android 8.0+ adaptive icons.
+
+For more details about the icon design and how to customize it, see [ICONS.md](ICONS.md).
+
+To regenerate icons after customization:
+```bash
+flutter pub get
+flutter pub run flutter_launcher_icons
 ```
 
 ## 📱 Features Details
