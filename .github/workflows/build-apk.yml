@@ -33,6 +33,7 @@ jobs:
 
       - name: Generate app icons
         run: dart run flutter_launcher_icons
+        continue-on-error: true
 
       - name: Analyze code
         run: flutter analyze --no-fatal-infos
