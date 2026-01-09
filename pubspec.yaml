@@ -15,8 +15,8 @@ dependencies:
   provider: ^6.1.1
   intl: ^0.18.1
   shared_preferences: ^2.2.2
-  # Receipt Print packages
-  esc_pos_bluetooth: ^0.4.1
+  # Receipt Print packages - UPDATED VERSIONS
+  esc_pos_bluetooth: ^0.5.0
   esc_pos_utils: ^1.1.0
   permission_handler: ^11.0.1
   path_provider: ^2.1.1
@@ -31,7 +31,11 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.0
   sqflite_common_ffi: ^2.3.0
-  flutter_launcher_icons: ^0.13.1
+  flutter_launcher_icons: ^0.14.1  # UPDATED from ^0.13.1
+
+# Dependency overrides to resolve version conflicts
+dependency_overrides:
+  image: ^4.0.0
 
 flutter:
   uses-material-design: true
